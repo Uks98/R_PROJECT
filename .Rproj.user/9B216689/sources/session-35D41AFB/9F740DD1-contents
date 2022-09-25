@@ -6,8 +6,7 @@ library(dplyr) #전처리
 library(ggplot2) #시각화
 library(readxl)
 
-#raw_welfare <- read.spss(file = "Koweps_hpc10_2015_beta1.sav",
-to.data.frame = T) #to.data.frame은 spss파일을 데이터 프레임으러 변경 , F = 리스트
+raw_welfare <- read.spss(file = "C:/savfolder/Koweps_hpc10_2015_beta1.sav",to.data.frame = T) #to.data.frame은 spss파일을 데이터 프레임으러 변경 , F = 리스트
 welfare <- raw_welfare
 
 #데이터 검토하기
