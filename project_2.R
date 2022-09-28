@@ -92,3 +92,13 @@ ggplot(data = sex_income, aes(x = ageg,y = mean_sex_income, fill = sex)) +
   scale_x_discrete(limits = c("young","middle","old"))+
   xlab("나이 순") + ylab("월급")
 
+
+#나이 및 성별 월급 평균표를 만들어 그래프 표현
+
+sex_age <- welfare %>% 
+  filter(!is.na(income)) %>% 
+  group_by(age,sex) %>% 
+  summarise(mean_income = mean(income))
+
+ggplot(data = sex_age, aes(x = age, y = mean_income,col = sex)) + geom_line(position = 'dodge')+
+  xlab("나이") + ylab("월급")
