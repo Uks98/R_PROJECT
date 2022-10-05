@@ -43,3 +43,33 @@ df_student
 df_exam
 df_novar
 df_sheet
+
+df_csv <- read.csv("C:/Rdata_csv/csv_exam.csv")
+df_cnovar <- read.csv("C:/Rdata_csv/csv_exam_novar.csv",header = F)
+df_csv
+df_cnovar
+
+#데이터 프레임 csv로 만들기
+df_mid<- data.frame(math = c(40,50,90,60),
+                    english = c(80,70,30,50),
+                    science = c(92,10,50,80))
+
+df_mid
+
+write.csv(df_mid,"df_midcsv.csv")
+
+df_class <- data.frame(name = c("김","성","이","홍"),
+                       class = c(1,2,3,4),
+                       school = c("한라대학교","서울대학교","건국대학교","강릉원주대학교"))
+
+df_class
+write.csv(df_class,"df_class.csv")
+
+####97page
+
+df_ex2 = data.frame(id = c(11,12,13,14),name = c("김","성","박","이"))
+class(df_ex2)
+write.csv(df_ex2,file = "df_ex2.csv")
+#r데이터 파일로 저장
+save(df_ex2, file = "df_exe.rda")
+load("df_ex2.rda")
